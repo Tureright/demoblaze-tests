@@ -1,0 +1,57 @@
+Este archivo contiene las conclusiones de las pruebas ejecutadas. Tanto para las pruebas E2E con Selenium WebDriver como para las pruebas de API con Karate.
+
+
+
+
+
+
+
+
+=======================================================================
+                 HALLAZGOS Y CONCLUSIONES DE PRUEBAS E2E CON SELENIUM
+=======================================================================
+La evidencia completa y los defectos detallados se encuentran en:
+   
+
+    > e2e-selenium > documentation > DefectReport.xlsx
+
+
+-----------------------------------------------------------------------
+1. RESUMEN
+-----------------------------------------------------------------------
+Se ejecutaron pruebas automatizadas de extremo a extremo (E2E) sobre 
+el flujo de compra de la aplicación www.demoblaze.com. Durante la 
+ejecución, se identificaron defectos críticos en el proceso 
+de checkout que permiten la realización de compras con datos inválidos 
+o inconsistentes. 
+
+-----------------------------------------------------------------------
+2. PRINCIPALES HALLAZGOS
+-----------------------------------------------------------------------
+- Falta de validación y sanitización de entradas, lo cual expone la 
+  aplicación a posibles ataques de inyección SQL.
+
+- Ausencia de controles en los campos de tarjeta de crédito, lo que 
+  permite ingresar valores no numéricos o formatos inválidos.
+
+- Inexistencia de verificación de consistencia en los campos 
+  geográficos (“Country” y “City”).
+
+- Falta de validación de rango y formato en los campos de fecha 
+  (“Month” y “Year”).
+
+
+-----------------------------------------------------------------------
+3. CONCLUSIONES
+-----------------------------------------------------------------------
+1. El flujo de compra en Demoblaze no aplica controles adecuados de 
+   validación, lo que representa un riesgo funcional y de seguridad.
+
+2. El resultado general de las pruebas E2E fue FALLIDO, dado que la 
+   aplicación permitió procesar compras con datos incorrectos.
+
+3. Se recomienda implementar validaciones tanto del lado del cliente 
+   como del servidor, reforzar la sanitización de datos y adoptar 
+   buenas prácticas de seguridad en formularios.
+
+
