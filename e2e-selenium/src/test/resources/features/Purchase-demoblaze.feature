@@ -4,8 +4,8 @@ Feature: Flujo de compra de demoblaze
   @PurchaseTwoItems
   Scenario Outline: Comprar dos productos en demoblaze con datos inconsistentes
     Given Estoy en el home de demoblaze
-    When Agrego los produtos Samsung galaxy s6 y Sony vaio i5 al carrito
-    And Hago clic en el botón de "Place Order" dentro del cerrito de compras
+    When Agrego los produtos "Samsung galaxy s6" y "Nexus 6" al carrito
+    And Hago clic en el botón de Place Order dentro del carrito de compras
     And Completo el formulario de compra con los datos "<Name>", "<Country>", "<City>", "<Credit card>", "<Month>" y "<Year>"
     And Finalizo la compra
     Then No me permite comprar productos con los datos proporcionados

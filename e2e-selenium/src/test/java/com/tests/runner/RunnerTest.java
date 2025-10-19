@@ -6,12 +6,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:target/cucumber/cucumber-report.html",
+        plugin = {"pretty",
+                "html:target/cucumber/cucumber-report.html",
                 "json:target/cucumber/cucumber.json"},
         stepNotifications = true,
         features = "src/test/resources/features",
-        glue = "com.webTesting",
-        tags = "@ProductStore"
+        glue = {"com.tests.stepDefs", "com.tests.core"},
+        tags = "@PurchaseFlow"
 )
 public class RunnerTest {
 }

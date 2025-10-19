@@ -3,9 +3,7 @@ package com.tests.core;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverManager {
@@ -34,8 +32,8 @@ public class DriverManager {
         driver.quit();
     }
 
-    public static void screenShot(){
+    public static void screenShot(String name){
         byte[] evidencia = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-        scenario.attach(evidencia, "image/png", "evidencias");
+        scenario.attach(evidencia, "image/png", name);
     }
 }
