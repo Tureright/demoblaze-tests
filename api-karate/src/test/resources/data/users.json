@@ -1,0 +1,14 @@
+{
+  "newUser": {
+    "username": "testuser",
+    "password": "Password01"
+  },
+  "existingUser": {
+    "username": "PatricioE",
+    "password": "BBPassKey14"
+  },
+  "noPwdUser": {
+    "username": "SandyTesting",
+    "password": ""
+  }
+}
