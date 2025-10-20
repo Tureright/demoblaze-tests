@@ -1,5 +1,11 @@
-Este archivo contiene las conclusiones de las pruebas ejecutadas. Tanto para las pruebas E2E con Selenium WebDriver como para las pruebas de API con Karate.
 
+
+
+Este archivo contiene las conclusiones y hallazgos de las pruebas ejecutadas 
+para los proyectos de:
+
+- Pruebas E2E con Selenium WebDriver
+- Pruebas de API con Karate.
 
 
 
@@ -8,7 +14,7 @@ Este archivo contiene las conclusiones de las pruebas ejecutadas. Tanto para las
 
 
 =======================================================================
-                 HALLAZGOS Y CONCLUSIONES DE PRUEBAS E2E CON SELENIUM
+          HALLAZGOS Y CONCLUSIONES DE PRUEBAS E2E CON SELENIUM
 =======================================================================
 La evidencia completa y los defectos detallados se encuentran en:
    
@@ -44,14 +50,68 @@ o inconsistentes.
 -----------------------------------------------------------------------
 3. CONCLUSIONES
 -----------------------------------------------------------------------
-1. El flujo de compra en Demoblaze no aplica controles adecuados de 
+- El flujo de compra en Demoblaze no aplica controles adecuados de 
    validación, lo que representa un riesgo funcional y de seguridad.
 
-2. El resultado general de las pruebas E2E fue FALLIDO, dado que la 
+- El resultado general de las pruebas E2E fue FALLIDO, dado que la 
    aplicación permitió procesar compras con datos incorrectos.
 
-3. Se recomienda implementar validaciones tanto del lado del cliente 
+- Se recomienda implementar validaciones tanto del lado del cliente 
    como del servidor, reforzar la sanitización de datos y adoptar 
    buenas prácticas de seguridad en formularios.
 
 
+
+
+
+
+
+
+
+
+=======================================================================
+          HALLAZGOS Y CONCLUSIONES DE PRUEBAS API CON KARATE
+=======================================================================
+La evidencia completa y los defectos detallados se encuentran en:
+   
+    > api-karate > documentation > DefectReport.xlsx
+
+
+-----------------------------------------------------------------------
+1. RESUMEN
+-----------------------------------------------------------------------
+Se ejecutaron pruebas automatizadas de API sobre los endpoints de 
+registro y autenticación de la aplicación www.demoblaze.com utilizando 
+el framework Karate. Durante la ejecución, se identificaron defectos 
+críticos relacionados con el incumplimiento de estándares HTTP REST, 
+validación insuficiente de datos de entrada y respuestas inadecuadas 
+del servidor.
+
+-----------------------------------------------------------------------
+2. PRINCIPALES HALLAZGOS
+-----------------------------------------------------------------------
+- Incumplimiento de estándares HTTP: La API retorna código 200 OK 
+  para operaciones fallidas, cuando debería devolver códigos de error 
+  apropiados (400, 401, 409) según la especificación RFC 7231.
+
+- Falta de validación en el campo "password", permitiendo el registro 
+  de usuarios con contraseñas vacías, lo que representa un riesgo 
+  crítico de seguridad.
+
+- Ausencia de información del usuario en respuestas exitosas de 
+  registro, devolviendo únicamente objetos vacíos o mensajes genéricos 
+  en lugar de los datos del recurso creado.
+
+
+-----------------------------------------------------------------------
+3. CONCLUSIONES
+-----------------------------------------------------------------------
+- La API de Demoblaze no sigue las convenciones y estándares REST, 
+   lo que afecta la mantenibilidad e integración con 
+   otros sistemas.
+
+- Se recomienda implementar:
+   - Códigos de estado HTTP semánticamente correctos
+   - Validaciones robustas en todos los campos de entrada
+   - Respuestas consistentes que incluyan información del recurso
+   - Requisitos mínimos de seguridad para contraseñas
