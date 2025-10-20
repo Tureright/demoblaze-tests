@@ -1,4 +1,4 @@
-# 🧪 Demoblaze Test Automation Suite
+# Demoblaze Test Automation Suite
 
 Proyecto de automatización de pruebas para la aplicación [Demoblaze](https://www.demoblaze.com/), que incluye pruebas de API con Karate y pruebas end-to-end (E2E) con Selenium WebDriver.
 
@@ -7,19 +7,17 @@ Proyecto de automatización de pruebas para la aplicación [Demoblaze](https://w
 - [Descripción General](#descripción-general)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Requisitos Previos](#requisitos-previos)
-- [Ejecución de Pruebas](#ejecución-de-pruebas)
-- [Reportes y Evidencias](#reportes-y-evidencias)
+- [Documentación de Defectos](#documentación-de-defectos)
 - [Hallazgos Principales](#hallazgos-principales)
-- [Contribuciones](#contribuciones)
 
-## 🎯 Descripción General
+## Descripción General
 
 Este repositorio contiene dos suites de pruebas automatizadas diseñadas para validar la funcionalidad y calidad de la aplicación Demoblaze:
 
 - **Pruebas de API con Karate**: Validación de endpoints de registro y autenticación
 - **Pruebas E2E con Selenium**: Validación del flujo completo de compra en la interfaz web
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 ### Pruebas de API (Karate)
 
@@ -34,7 +32,7 @@ Este repositorio contiene dos suites de pruebas automatizadas diseñadas para va
 - **Maven** - Gestión de dependencias y construcción
 - **JUnit** - Framework de pruebas
 
-## ✅ Requisitos Previos
+## Requisitos Previos
 
 - Java JDK 11 o superior
 - Maven 3.6+
@@ -49,21 +47,21 @@ Cada proyecto incluye documentación detallada de defectos encontrados:
 - `api-karate/documentation/DefectReport.xlsx`
 - `e2e-selenium/documentation/DefectReport.xlsx`
 
-## 🔍 Hallazgos Principales
+## Hallazgos Principales
 
 ### Pruebas de API
 
-- ❌ Incumplimiento de estándares HTTP (código 200 para errores)
-- ❌ Validación insuficiente en campo "password"
-- ❌ Respuestas inconsistentes sin información del recurso creado
+-  Incumplimiento de estándares HTTP (código 200 para errores)
+-  Validación insuficiente en campo "password"
+-  Respuestas inconsistentes sin información del recurso creado
 - **Resultado**: 3 de 5 casos fallidos
 
 ### Pruebas E2E
 
-- ❌ Falta de validación en campos de entrada del checkout
-- ❌ Ausencia de sanitización (riesgo de inyección SQL)
-- ❌ Campos de tarjeta aceptan valores no numéricos
-- ❌ Sin validación de consistencia geográfica
+-  Falta de validación en campos de entrada del checkout
+-  Ausencia de sanitización (riesgo de inyección SQL)
+-  Campos de tarjeta aceptan valores no numéricos
+-  Sin validación de consistencia geográfica
 - **Resultado**: Flujo de compra fallido
 
 Para más detalles, consultar los directorios de "documentation" de cada proyecto.
